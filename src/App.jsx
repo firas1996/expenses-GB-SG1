@@ -1,5 +1,11 @@
+import Expensetem from "./components/Expensetem";
+
 function App() {
-  return <></>;
+  return (
+    <>
+      <Expensetem />
+    </>
+  );
 }
 
 export default App;

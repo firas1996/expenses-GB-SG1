@@ -1,12 +1,12 @@
-import React from "react";
+import "./ExpenseItem.css";
 
 const Expensetem = () => {
   return (
-    <div>
-      <div>date</div>
-      <div>
+    <div className="expense-item">
+      <div className="expense-date">date</div>
+      <div className="expense-item__description">
         <h3>title</h3>
-        <div>$ price</div>
+        <div className="expense-item__price">$ price</div>
       </div>
     </div>
   );
