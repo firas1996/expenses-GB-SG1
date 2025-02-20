@@ -1,13 +1,15 @@
 import "./ExpenseItem.css";
 
-const Expensetem = ({ title, price, date }) => {
+const ExpenseItem = ({ title, price, date }) => {
   const year = date.getFullYear();
+  const month = date.toLocaleString("en-US", { month: "long" });
+  const day = date.toLocaleString("en-US", { day: "2-digit" });
   return (
     <div className="expense-item">
       <div className="expense-date">
-        <div>month</div>
+        <div>{month}</div>
         <div>{year}</div>
-        <div>day</div>
+        <div>{day}</div>
       </div>
       <div className="expense-item__description">
         <h3>{title}</h3>
@@ -17,4 +19,4 @@ const Expensetem = ({ title, price, date }) => {
   );
 };
 
-export default Expensetem;
+export default ExpenseItem;
