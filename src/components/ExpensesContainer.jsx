@@ -3,9 +3,14 @@ import ExpenseItem from "./ExpenseItem";
 import ExpensesFilter from "./ExpensesFilter";
 
 const ExpensesContainer = ({ expensesData }) => {
+  const years = [
+    "All",
+    ...new Set(expensesData.map((el) => el.date.getFullYear()).sort()),
+  ];
+  console.log(years);
   return (
     <div className="expenses">
-      <ExpensesFilter />
+      <ExpensesFilter years={years} />
       {expensesData.map((expense) => {
         return (
           <ExpenseItem
