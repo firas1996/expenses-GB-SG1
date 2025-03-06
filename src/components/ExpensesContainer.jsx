@@ -13,7 +13,6 @@ const ExpensesContainer = ({ expensesData }) => {
   const filtredExpenses = expensesData.filter((el) => {
     return selectedYear == "All" ? true : el.date.getFullYear() == selectedYear;
   });
-  console.log(filtredExpenses);
   return (
     <div className="expenses">
       <ExpensesFilter
