@@ -1,7 +1,7 @@
 import "./Chart.css";
 import ChartElement from "./ChartElement";
 
-const Chart = () => {
+const Chart = ({ expensesData }) => {
   const chartData = [
     { label: "Jan", value: 0 },
     { label: "Feb", value: 0 },
@@ -16,6 +16,10 @@ const Chart = () => {
     { label: "Nov", value: 0 },
     { label: "Dec", value: 0 },
   ];
+  for (const expense of expensesData) {
+    chartData[expense.date.getMonth()].value += expense.price;
+  }
+  console.log(chartData);
   return (
     <div className="chart">
       {chartData.map((el) => {
