@@ -1,10 +1,10 @@
 import { useState } from "react";
 import "./AddExpenseForm.css";
 
-const AddExpenseForm = () => {
+const AddExpenseForm = ({ getData }) => {
   const thisYear = new Date().getFullYear();
   const minDate = `${thisYear - 2}-01-01`;
-  const maxDate = `${thisYear - 2}-12-31`;
+  const maxDate = `${thisYear + 2}-12-31`;
   const [formData, setFormData] = useState({
     title: "",
     price: "",
@@ -16,7 +16,12 @@ const AddExpenseForm = () => {
   };
   const formSubmition = (event) => {
     event.preventDefault();
-    console.log(formData);
+    getData({
+      id: Math.random(),
+      title: formData.title,
+      price: +formData.price,
+      date: new Date(formData.date),
+    });
     setFormData({
       title: "",
       price: "",
